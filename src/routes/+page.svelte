@@ -6,13 +6,13 @@
 	import { browser } from '$app/environment'; 
     import * as Dialog from "$lib/components/ui/dialog/index.js";
     let appState = getAppState();
-    let pauseCalls = $state(0)
     let inputOfCupAIsInvalid = $state(false);
     let inputOfCupBIsInvalid = $state(false);
     let inputOfTargetIsInvalid = $state(false);
     let inputForCupA:HTMLInputElement | null
     let inputForCupB:HTMLInputElement | null
     let inputForTarget:HTMLInputElement | null
+    let solutionTable: HTMLTableElement | null = null;
      let dotLottieA:DotLottie | null = null
      let dotLottieB:DotLottie | null = null
     let presentFrameDirectionA = $state<'up'|'down'|'static'>('static');
@@ -135,7 +135,8 @@ if(browser){
 }
 
 function handleViewSolution(){
-      appState.visited.clear() 
+    appState.visited.clear();
+    solutionTable?.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 </script>
 
@@ -194,9 +195,9 @@ function handleViewSolution(){
         ✨ Find Solution
     </button>
     {#if  appState.solutionFound}
-    <div class="mt-8 w-full max-w-2xl">
+    <div class="mt-2 w-full max-w-2xl">
         <h2 class="text-xl font-bold text-blue-800 mb-4">🔍 Solution</h2>
-        <table class="w-full table-auto border-collapse bg-white shadow rounded">
+        <table bind:this={solutionTable} class="w-full table-auto border-collapse bg-white shadow rounded">
             <thead>
                 <tr class="bg-blue-100">
                     <th class="border px-4 py-2 text-left">Step</th>
