@@ -194,6 +194,11 @@ function handleViewSolution(){
     <button onclick={handleFindSolution} disabled={appState.animating} class="mt-6 rounded-full bg-purple-500 px-8 py-3 text-white font-bold shadow-lg hover:bg-purple-600 transition-all">
         ✨ Find Solution
     </button>
+    {#if appState.solutionFound}
+        <button onclick={handleReset} class="mt-6 ml-4 rounded-full bg-red-500 px-8 py-3 text-white font-bold shadow-lg hover:bg-red-600 transition-all">
+            🔄 Reset
+        </button>
+    {/if}
     {#if  appState.solutionFound}
     <div class="mt-2 w-full max-w-2xl">
         <h2 class="text-xl font-bold text-blue-800 mb-4">🔍 Solution</h2>
