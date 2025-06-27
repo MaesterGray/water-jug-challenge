@@ -2,6 +2,10 @@
 
 A web-based solution to the classic Water Jug Riddle, implemented with Svelte and TypeScript. This application provides an interactive visualization of the solution using animated water jugs.
 
+## 🌐 Live Demo
+
+Try out the Water Jug Challenge here: [Water Jug Wizard](https://water-jug-challenge-for-chicks.netlify.app/)
+
 ## Problem Description
 
 Given two jugs with capacities x and y liters respectively, and an infinite water supply, the goal is to measure exactly z liters of water using only these operations:
@@ -60,7 +64,7 @@ Space Complexity: O(xy) to store visited states
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/water-jug-challenge.git
+git clone https://github.com/MaesterGray/water-jug-challenge
 cd water-jug-challenge
 ```
 
